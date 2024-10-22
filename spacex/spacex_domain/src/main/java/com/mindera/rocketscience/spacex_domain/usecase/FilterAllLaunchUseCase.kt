@@ -6,9 +6,8 @@ import com.mindera.rocketscience.spacex_domain.model.SpaceXLaunchItem
 import com.mindera.rocketscience.spacex_domain.repository.SpaceXRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-class FilterAllLaunchUseCase @Inject constructor(
+class FilterAllLaunchUseCase(
     private val repository: SpaceXRepository
 ) {
     operator fun invoke(

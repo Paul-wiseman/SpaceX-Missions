@@ -19,9 +19,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import java.io.IOException
-import javax.inject.Inject
 
-class SpaceXRepositoryImpl @Inject constructor(
+class SpaceXRepositoryImpl(
     private val spaceXDao: SpaceXDao,
     private val apiService: SpaceXApiServiceRetrofit
 ) : SpaceXRepository {

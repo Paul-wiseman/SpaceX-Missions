@@ -35,8 +35,16 @@ android {
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
 
-    kapt DaggerHilt.hiltCompiler
-    implementation DaggerHilt.hiltAndroid
+//    kapt DaggerHilt.hiltCompiler
+//    implementation DaggerHilt.hiltAndroid
+    implementation platform(Koin.koinBom)
+    implementation Koin.koinAndroid
+    implementation Koin.koinCore
+//    implementation Koin.koinScopeFeature
+    implementation Koin.koinScopeViewModel
+    implementation Koin.koinComposeViewModel
+
+
     implementation Kotlin.serialzation
 
     testImplementation Testing.junit4
@@ -56,5 +64,5 @@ dependencies {
     androidTestImplementation Testing.composeUiTest
     androidTestImplementation Testing.mockk
     androidTestImplementation Testing.mockWebServer
-    androidTestImplementation Testing.hiltTesting
+//    androidTestImplementation Testing.hiltTesting
 }

@@ -45,7 +45,7 @@ dependencies {
     implementation Compose.ui
     implementation Compose.uiToolingPreview
     implementation Compose.uiTooling
-    implementation Compose.hiltNavigationCompose
+//    implementation Compose.hiltNavigationCompose
     implementation Compose.material
     implementation Compose.runtime
     implementation Compose.pagingCompose
@@ -56,8 +56,15 @@ dependencies {
     implementation Compose.coilCompose
     implementation Kotlin.serialzation
 
-    kapt DaggerHilt.hiltCompiler
-    implementation DaggerHilt.hiltAndroid
+//    kapt DaggerHilt.hiltCompiler
+//    implementation DaggerHilt.hiltAndroid
+    implementation platform(Koin.koinBom)
+    implementation Koin.koinAndroid
+    implementation Koin.koinCore
+    implementation Koin.koinComposeViewModel
+//    implementation Koin.koinScopeFeature
+//    implementation Koin.koinScopeViewModel
+//    implementation Koin.koinComposeViewModel
 
     testImplementation Testing.junit4
     testImplementation Testing.junitAndroidExt
@@ -76,7 +83,7 @@ dependencies {
     androidTestImplementation Testing.composeUiTest
     androidTestImplementation Testing.mockk
     androidTestImplementation Testing.mockWebServer
-    androidTestImplementation Testing.hiltTesting
+//    androidTestImplementation Testing.hiltTesting
 
     debugImplementation Compose.uiToolingPreview
     debugImplementation Compose.uiTooling

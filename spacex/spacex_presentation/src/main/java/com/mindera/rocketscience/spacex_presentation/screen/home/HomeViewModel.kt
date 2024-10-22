@@ -11,16 +11,14 @@ import com.mindera.rocketscience.spacex_domain.model.CompanyInfo
 import com.mindera.rocketscience.spacex_domain.model.SpaceXLaunchItem
 import com.mindera.rocketscience.spacex_domain.usecase.SpaceXUseCases
 import com.mindera.rocketscience.util.UiText
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModel @Inject constructor(
+//@HiltViewModel
+class HomeViewModel(
     private val spaceXUseCase: SpaceXUseCases,
     private val spaceXPreference: SpaceXPreference
 ) : ViewModel() {

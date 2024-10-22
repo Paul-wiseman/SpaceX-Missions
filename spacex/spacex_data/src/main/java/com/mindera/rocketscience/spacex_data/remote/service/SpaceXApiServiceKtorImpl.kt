@@ -9,16 +9,16 @@ import io.ktor.client.request.get
 import io.ktor.http.URLBuilder
 import io.ktor.http.URLProtocol
 import io.ktor.http.path
-import javax.inject.Inject
 
-class SpaceXApiServiceKtorImpl @Inject constructor(
+class SpaceXApiServiceKtorImpl(
     private val client: HttpClient
 ) : SpaceXApiServiceKtor {
-    var missionName:String = ""
+    var missionName: String = ""
         get() = field
-        private set(value){
+        private set(value) {
             field = "new value $value"
         }
+
     override suspend fun getCompanyInfo(): CompanyInfoResponse {
         return client.get {
             url {

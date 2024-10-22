@@ -1,9 +1,8 @@
 package com.mindera.rocketscience.spacex_domain.usecase
 
 import com.mindera.rocketscience.spacex_domain.repository.SpaceXRepository
-import javax.inject.Inject
 
-class FetchAndStoreAllLaunchesUseCase @Inject constructor(
+class FetchAndStoreAllLaunchesUseCase (
     private val repository: SpaceXRepository
 ) {
 

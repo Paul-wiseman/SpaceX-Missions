@@ -3,9 +3,8 @@ package com.mindera.rocketscience.util
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import javax.inject.Inject
 
-open class NetworkUtil @Inject constructor() {
+open class NetworkUtil  {
 
     fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager =

@@ -3,13 +3,12 @@ package com.mindera.rocketscience.spacex_data.util
 import android.content.Context
 import com.mindera.rocketscience.spacex_data.util.Constants.NO_INTERNET_CONNECTION
 import com.mindera.rocketscience.util.NetworkUtil
-import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
 
 class ConnectivityInterceptor(
-    @ApplicationContext private val context: Context,
+     private val context: Context,
     private val netWorkUtil: NetworkUtil
 ) :Interceptor {
 

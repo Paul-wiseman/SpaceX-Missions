@@ -22,9 +22,8 @@ import com.mindera.rocketscience.spacex_domain.model.SpaceXLaunchItem
 import com.mindera.rocketscience.spacex_presentation.screen.details.DetailsScreen
 import com.mindera.rocketscience.spacex_presentation.screen.home.SpaceXHomeScreen
 import com.wiseman.spacex.ui.theme.SpaceXTheme
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

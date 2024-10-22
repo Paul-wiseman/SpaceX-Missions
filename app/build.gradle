@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+//    id 'dagger.hilt.android.plugin'
     id 'kotlinx-serialization'
 }
 
@@ -55,7 +55,7 @@ dependencies {
     implementation Compose.ui
     implementation Compose.uiToolingPreview
     implementation Compose.uiTooling
-    implementation Compose.hiltNavigationCompose
+//    implementation Compose.hiltNavigationCompose
     implementation Compose.material
     implementation Compose.runtime
     implementation AndroidX.pagingRuntime
@@ -67,8 +67,14 @@ dependencies {
     implementation Kotlin.serialzation
 
     // hilt
-    kapt DaggerHilt.hiltCompiler
-    implementation DaggerHilt.hiltAndroid
+//    kapt DaggerHilt.hiltCompiler
+//    implementation DaggerHilt.hiltAndroid
+    implementation platform(Koin.koinBom)
+    implementation Koin.koinAndroid
+    implementation Koin.koinCore
+//    implementation Koin.koinScopeFeature
+    implementation Koin.koinScopeViewModel
+    implementation Koin.koinComposeViewModel
 
     // Retrofits
     implementation(Retrofit.okHttp)
@@ -105,9 +111,9 @@ dependencies {
     debugImplementation Compose.uiToolingPreview
     debugImplementation Compose.uiTooling
 }
-hilt {
-    enableAggregatingTask = false
-}
+//hilt {
+//    enableAggregatingTask = false
+//}
 
 kapt {
     correctErrorTypes true

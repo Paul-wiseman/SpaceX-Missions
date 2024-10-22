@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Space_x">Space X</string>
+    <string name="back">Back</string>
+    <string name="filter_list">Filter list</string>
+    <string name="company">COMPANY</string>
+    <string name="launches">LAUNCHES</string>
+    <string name="company_info">%1$s was founded by %2$s in %3$s. It has now %4$d employees, %5$d launch sites and is valued at USD %6$s.</string>
+    <string name="something_went">Something went wrong</string>
+    <string name="mission_image">Mission Image</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="filter_launches">Filter Launches</string>
+    <string name="year">Year:</string>
+    <string name="successful_launch">Successful Launch:</string>
+    <string name="sort_order">Sort Order:</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="scroll_top_button">Scroll To Top</string>
+    <string name="only_successful_launches">Only Successful Launches</string>
+    <string name="mission">Mission: %1$s</string>
+    <string name="date_time">Date/Time: %1$s / %2$s</string>
+    <string name="Rocket">Rocket: %1$s / rocket</string>
+    <string name="unable_to_get_time">Unable to get time</string>
+    <string name="days_since_launch">Since %1$d from now</string>
+</resources>

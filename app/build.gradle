@@ -1,0 +1,114 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlinx-serialization'
+}
+
+
+android {
+    namespace = "com.wiseman.spacex"
+    compileSdk ProjectConfig.compileSdk
+
+    defaultConfig {
+        applicationId ProjectConfig.appId
+        minSdk ProjectConfig.minSdk
+        targetSdk ProjectConfig.targetSdk
+        versionCode ProjectConfig.versionCode
+        versionName ProjectConfig.versionName
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = ProjectConfig.javersion
+        targetCompatibility = ProjectConfig.javersion
+    }
+    kotlinOptions {
+        jvmTarget = ProjectConfig.jvmTarget
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion Compose.composeCompilerVersion
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.2'
+    implementation platform('androidx.compose:compose-bom:2024.09.03')
+
+    implementation Compose.ui
+    implementation Compose.uiToolingPreview
+    implementation Compose.uiTooling
+    implementation Compose.hiltNavigationCompose
+    implementation Compose.material
+    implementation Compose.runtime
+    implementation AndroidX.pagingRuntime
+    implementation Compose.pagingCompose
+    implementation Compose.coilCompose
+    implementation Compose.navigation
+    implementation Compose.viewModelCompose
+    implementation Compose.activityCompose
+    implementation Kotlin.serialzation
+
+    // hilt
+    kapt DaggerHilt.hiltCompiler
+    implementation DaggerHilt.hiltAndroid
+
+    // Retrofits
+    implementation(Retrofit.okHttp)
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.okHttpLoggingInterceptor)
+    implementation(Kotlin.kotlinSerializationConverter)
+
+
+    implementation(Kotlin.ktorAndroid)
+    implementation(Kotlin.ktorCore)
+    implementation(Kotlin.ktorConverter)
+    implementation(Kotlin.ktorLogging)
+    implementation(Kotlin.ktorContentNavigation)
+    implementation(Retrofit.networkRequestProfiler)
+
+    // modules
+    implementation(project(Modules.core))
+    implementation(project(Modules.SpacexData))
+    implementation(project(Modules.SpacexDomain))
+    implementation(project(Modules.SpacexPresentation))
+    implementation(project(Modules.coreUi))
+
+    // room
+    kapt Room.roomCompiler
+    implementation Room.roomKtx
+    implementation Room.roomRuntime
+    implementation Room.roomPaging
+
+
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appCompat
+    implementation Google.material
+
+    debugImplementation Compose.uiToolingPreview
+    debugImplementation Compose.uiTooling
+}
+hilt {
+    enableAggregatingTask = false
+}
+
+kapt {
+    correctErrorTypes true
+}
